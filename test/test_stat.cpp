@@ -1,27 +1,26 @@
 #include "stat.h"
 
 #include <iostream>
-
+#include <vector>
+#include <memory>
 using namespace std;
 
-const int N = 3;
+typedef unique_ptr<Statistic> ptr_stat;
 
-int main()
+int main(int avgc,char**argv)
 {
-statistic* ptr[N];
-ptr[0] = new maxi;
-ptr[1] = new mini;
-ptr[2] = new ang;
+vector<ptr_stat> buf;
+buf.push_back(ptr_stat(new MinStatistics));
+buf.push_back(ptr_stat(new MaxStatistics));
+buf.push_back(ptr_stat(new MeanStatistics));
 
-double k = 0;
-for(double i = 0; cin>>i;){
-   ptr[0]->process(i);
-   ptr[1]->process(i);
-   ptr[2]->process(i);
+for(double val;cin>>val;){
+   for(auto &st:buf)
+     st->process(val);
 }
-
-for(int i = 0; i < N; i++)
-  ptr[i]->result();   
+cout<<endl;
+for(auto &s:buf)
+    cout<<s->eval()<<endl;
 
 return 0;
 }
