@@ -1,40 +1,39 @@
 #ifndef STAT_H_
 #define STAT_H_
-#include <vector>
 
-using namespace std;
-class statistic
+class Statistic
 {
 public:
-      virtual void process(double)=0;
-      virtual void result()=0;  //return res;
+    virtual void process(double)=0;
+    virtual double eval()const=0;
 };
 
-class mini:public statistic
+class MinStatistics:public Statistic
 {
 public:
-      void process(double);
-      void result();
+    void process(double val);
+   	double eval()const;
 private:
-       std::vector<double> vec2;
+    double min;
 };
 
-class maxi:public statistic
+class MaxStatistics:public Statistic
 {
 public:
-      void process(double);
-      void result();
+	void process(double val);
+	double eval()const;
 private:
-      std::vector<double> vec1;
+    double max;
 };
 
-class ang:public statistic
+class MeanStatistics:public Statistic
 {
 public:
-      void process(double); 
-      void result();
+    void process(double val);
+    double eval()const;
 private:
-      std::vector<double> vec3;
+    double sum = 0;
+    int count = 0;
 };
 
 #endif
