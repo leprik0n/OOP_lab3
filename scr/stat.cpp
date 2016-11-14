@@ -1,39 +1,56 @@
 #include "stat.h"
 
-#include <iostream>
-#include <algorithm>
-#include <vector>
-using namespace std;
-
-void maxi::process(double item){
-     vec1.push_back(item);
+void MinStatistics::process(double val)
+{
+    static double first = val;
+    if(first == val){
+        if(min < first){
+            goto mark;
+        }
+        else{
+            min = first;
+        }
+    }
+    mark:
+    if(min > val){
+        min = val;
+    }
 }
 
-void mini::process(double item){
-     vec2.push_back(item);
+double MinStatistics::eval()const
+{
+    return min;
 }
 
-void ang::process(double item){
-     vec3.push_back(item);
+void MaxStatistics::process(double val)
+{
+    static double first = val;
+    if(val == first){
+        if(max > first){
+            goto mark;
+        }
+        else{
+            max = first;
+        }
+    }
+    mark:
+    if(max < val){
+        max = val;
+    }
 }
 
-void maxi::result(){
-     sort(vec1.begin(),vec1.end());
-     cout<<"max = "<<vec1[vec1.size()-1]<<endl;
+double MaxStatistics::eval()const
+{
+    return max;
 }
 
-void mini::result(){
-     sort(vec2.begin(),vec2.end());
-     cout<<"min = "<<vec2[0]<<endl;
+void MeanStatistics::process(double val)
+{
+    sum += val;
+    ++count;
 }
 
-void ang::result(){
-     int sum = 0;
-     int k = 0;
-     for(int i = 0; i < vec3.size(); ++i){
-         sum += vec3[i];
-         ++k;
-     }
-     sum /= k;
-cout<<"sum/n = "<<sum<<endl;
+double MeanStatistics::eval()const
+{
+    return sum/count;
 }
