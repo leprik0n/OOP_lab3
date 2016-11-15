@@ -8,15 +8,12 @@
 #include <cassert>
 using namespace std;
 
-typedef unique_ptr<Statistic> ptr_stat;
-
 int main()
 {
-vector<ptr_stat> buf;
-
-buf.push_back(ptr_stat(new MinStatistics));
-buf.push_back(ptr_stat(new MaxStatistics));
-buf.push_back(ptr_stat(new MeanStatistics));
+vector<unique_ptr<Statistic> buf;
+buf.push_back(unique_ptr<Statistic>(new MinStatistics));
+buf.push_back(unique_ptr<Statistic>(new MaxStatistics));
+buf.push_back(unique_ptr<Statistic>(new MeanStatistics));
 
 vector<double> test;
 ifstream is("test.txt");
