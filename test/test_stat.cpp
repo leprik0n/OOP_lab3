@@ -10,7 +10,7 @@ using namespace std;
 
 int main()
 {
-vector<unique_ptr<Statistic> buf;
+vector<unique_ptr<Statistic> > buf;
 buf.push_back(unique_ptr<Statistic>(new MinStatistics));
 buf.push_back(unique_ptr<Statistic>(new MaxStatistics));
 buf.push_back(unique_ptr<Statistic>(new MeanStatistics));
