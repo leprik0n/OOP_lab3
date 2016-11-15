@@ -19,7 +19,7 @@ buf.push_back(ptr_stat(new MaxStatistics));
 buf.push_back(ptr_stat(new MeanStatistics));
 
 vector<double> test;
-ifstream is("test1.txt");
+ifstream is("test.txt");
 
 for(double val;is>>val;){
    for(auto &st:buf)
