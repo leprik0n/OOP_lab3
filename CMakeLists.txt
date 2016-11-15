@@ -1,13 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(Vector CXX)
-
-if (MSVC)
-    add_definitions(/W4)
-else()
-    add_definitions(-Wall)
-    add_definitions(-std=c++11)
-endif()
+project(LAB)
 
 include_directories(include)
 
