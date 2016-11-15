@@ -4,6 +4,7 @@
 class Statistic
 {
 public:
+    virtual ~Statistic(){}
     virtual void process(double)=0;
     virtual double eval()const=0;
 };
