@@ -1,6 +1,4 @@
-#ifndef STAT_H_
-#define STAT_H_
-
+#pragma once
 class Statistic
 {
 public:
@@ -36,5 +34,3 @@ private:
     double sum = 0;
     int count = 0;
 };
-
-#endif
