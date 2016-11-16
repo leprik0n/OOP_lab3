@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(OOP_LAB_3)
+project(OOP_lab3)
 
 add_definitions(-Wall)
 
