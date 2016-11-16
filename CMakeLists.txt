@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(LAB)
+project(OOP_LAB_3)
 
 add_definitions(-Wall)
 
@@ -12,6 +12,6 @@ enable_testing()
 
 set(SOURCES scr/stat.cpp)
 
-add_executable(test_ test/test_stat.cpp ${SOURCES})
+add_executable(testing test/test_stat.cpp ${SOURCES})
 
-add_test(NAME ${PROJECT_NAME} COMMAND test_)
+add_test(NAME ${PROJECT_NAME} COMMAND testing)
