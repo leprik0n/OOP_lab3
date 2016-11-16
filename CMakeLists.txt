@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(LAB)
+project(polimorf)
+
+add_definitions(-Wall)
+
+add_definitions(-std=c++11)
 
 include_directories(include)
 
