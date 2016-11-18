@@ -4,7 +4,7 @@ project(Polly)
 
 add_definitions(-Wall)
 
-add_definitions(-std=с++11)
+add_definitions(-std=gnu++11)
 
 include_directories(include)
 
