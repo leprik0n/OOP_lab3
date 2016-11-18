@@ -4,7 +4,7 @@ project(LAB)
 
 add_definitions(-Wall)
 
-add_definitions(-std=c++11)
+add_definitions(-std=gnu++11)
 
 include_directories(include)
 
