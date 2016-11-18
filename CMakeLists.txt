@@ -1,10 +1,10 @@
 cmake_minimum_required(VERSION 2.8)
 
-project(LAB)
+project(Polly)
 
 add_definitions(-Wall)
 
-add_definitions(-std=gnu++11)
+add_definitions(-std=с++11)
 
 include_directories(include)
 
@@ -12,6 +12,6 @@ enable_testing()
 
 set(SOURCES scr/stat.cpp)
 
-add_executable(testing test/test_stat.cpp ${SOURCES})
+add_executable(main test/test_stat.cpp ${SOURCES})
 
-add_test(NAME ${PROJECT_NAME} COMMAND testing)
+add_test(NAME ${PROJECT_NAME} COMMAND main)
