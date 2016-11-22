@@ -11,7 +11,7 @@ build_script:
     - cd C:\block\polimorfismver2
     - md build
     - cd build
-    - cmake -G"MinGW Makefiles" ..
+    - cmake -G"Visual Studio 15 Win64" ..
     - cmake --build . --config debug
 
 after_build:
