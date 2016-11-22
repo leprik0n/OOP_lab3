@@ -11,7 +11,7 @@ build_script:
     - cd C:\block\polimorfismver2
     - md build
     - cd build
-    - cmake -G"CodeBlocks - MinGW Makefies" ..
+    - cmake -G"MinGW Makefiles" ..
     - cmake --build . --config debug
 
 after_build:
