@@ -12,7 +12,7 @@ int main()
 {
 vector<unique_ptr<Statistic> > buf;
 buf.push_back(unique_ptr<Statistic>(new MinStatistics));
-buf.push_back(unique_ptr<Statistic>(new MaxStatistics));
+/*buf.push_back(unique_ptr<Statistic>(new MaxStatistics));
 buf.push_back(unique_ptr<Statistic>(new MeanStatistics));
 
 vector<double> test;
@@ -36,8 +36,11 @@ for(int i = 0; i < s; ++i){
 assert(buf[2]->eval() == sum/s);
 cout<<"TEST_3_OK"<<endl; 
 */
+for(double val;is>>val;){
+     buf[0]->process(val);
+}   
 cout<<"buf[0]->eval min==>"<<buf[0]->eval()<<endl;   
-cout<<"buf[1]->eval max==>"<<buf[1]->eval()<<endl;  
-cout<<"buf[2]->eval avg==>"<<buf[2]->eval()<<endl;     
+//cout<<"buf[1]->eval max==>"<<buf[1]->eval()<<endl;  
+//cout<<"buf[2]->eval avg==>"<<buf[2]->eval()<<endl;     
 return 0;
 }
