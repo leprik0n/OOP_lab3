@@ -16,7 +16,7 @@ private:
     double min;
 };
 
-/*class MaxStatistics:public Statistic
+class MaxStatistics:public Statistic
 {
 public:
 	void process(double val);
@@ -34,4 +34,4 @@ private:
     double sum = 0;
     int count = 0;
 };
-*/
+
