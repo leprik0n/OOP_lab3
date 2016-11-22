@@ -3,13 +3,14 @@
 void MinStatistics::process(double val)
 {
     static double first = val;
-    static bool yes;
-    if(first == val){
-        if(yes) goto mark;
-        min = first;
-        yes = true;
+    if(val == first){
+        if(min < first){
+            goto mark;
+        }
+        else{
+            min = first;
+        }
     }
-
     mark:
     if(min > val){
         min = val;
@@ -21,7 +22,7 @@ double MinStatistics::eval()const
     return min;
 }
 
-/*void MaxStatistics::process(double val)
+void MaxStatistics::process(double val)
 {
     static double first = val;
     if(val == first){
@@ -53,5 +54,3 @@ double MeanStatistics::eval()const
 {
     return sum/count;
 }
-
-*/
