@@ -36,6 +36,7 @@ for(int i = 0; i < s; ++i){
 assert(buf[2]->eval() == sum/s);
 cout<<"TEST_3_OK"<<endl; 
 */
+ifstream is("mas.txt");   
 for(double val;is>>val;){
      buf[0]->process(val);
 }   
