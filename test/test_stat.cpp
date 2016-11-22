@@ -47,7 +47,7 @@ for(double val;is>>val;){
    buf[0]->process(val);
 }
 cout<<buf[0]->eval()<<endl;
-   
+cout<<"HELLO WORLD"<<endl;   
    
 return 0;
 }
