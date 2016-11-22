@@ -36,12 +36,18 @@ for(int i = 0; i < s; ++i){
 assert(buf[2]->eval() == sum/s);
 cout<<"TEST_3_OK"<<endl; 
 */
-ifstream is("mas.txt");   
-for(double val;is>>val;){
-     buf[0]->process(val);
-}   
-cout<<"buf[0]->eval min==>"<<buf[0]->eval()<<endl;   
-//cout<<"buf[1]->eval max==>"<<buf[1]->eval()<<endl;  
-//cout<<"buf[2]->eval avg==>"<<buf[2]->eval()<<endl;     
+vector<double> vec(10);
+vec[0] = 0.0; vec[4] = -23.34;
+vec[1] = 42.2; vec[5] = -12.286;
+vec[2] = 6.6;  vec[6] = 89.9;
+vec[3] = 0.00; vec[7] = 8.0001;
+vec[8] = 0.012; vec[9] = 10;
+int s = vec.size();
+for(int i = 0; i < s; i++){
+   buf[0]->process(vec[i]);
+}
+   
+cout<<"buf[0]->eval()"<<buf[0]->eval()<<endl;
+  
 return 0;
 }
