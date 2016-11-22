@@ -22,9 +22,9 @@ vec[1] = 42.2; vec[5] = -12.286;
 vec[2] = 6.6;  vec[6] = 89.9;
 vec[3] = 0.00; vec[7] = 8.0001;
 vec[8] = 0.012; vec[9] = 10;
-int s = vec.size();
+int sk = vec.size();
    
-for(int i = 0; i < s; i++){
+for(int i = 0; i < sk; i++){
    for(auto &st:buf)
      st->process(vec[i]);
    test.push_back(vec[i]);
