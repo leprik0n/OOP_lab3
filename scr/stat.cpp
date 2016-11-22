@@ -22,7 +22,7 @@ double MinStatistics::eval()const
     return min;
 }
 
-void MaxStatistics::process(double val)
+/*void MaxStatistics::process(double val)
 {
     static double first = val;
     if(val == first){
@@ -55,3 +55,4 @@ double MeanStatistics::eval()const
     return sum/count;
 }
 
+*/
