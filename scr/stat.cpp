@@ -3,14 +3,13 @@
 void MinStatistics::process(double val)
 {
     static double first = val;
+    static bool yes;
     if(first == val){
-        if(min < first){
-            goto mark;
-        }
-        else{
-            min = first;
-        }
+        if(yes) goto mark;
+        min = first;
+        yes = true;
     }
+
     mark:
     if(min > val){
         min = val;
