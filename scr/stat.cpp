@@ -2,6 +2,16 @@
 
 #include <vector>
 
+const double& Min(const double &a,const double &b)
+{
+    return ((a > b) ? b : a);
+}
+
+const double& Max(const double &a,const double &b)
+{
+    return ((a > b) ? a : b);
+}
+
 void MinStatistics::process(double val)
 {
     static std::vector<double> mas;
@@ -11,11 +21,11 @@ void MinStatistics::process(double val)
     }
     if(mas.size() == 1){
         mas.push_back(val);
-        min = std::min(mas[0],mas[1]);
+        min = Min(mas[0],mas[1]);
         return;
     }
     mas[1] = val;
-    double m = std::min(mas[0],mas[1]);
+    double m = Min(mas[0],mas[1]);
     if(min > m){
         min = m;
     }
@@ -35,11 +45,11 @@ void MaxStatistics::process(double val)
     }
     if(mas.size() == 1){
         mas.push_back(val);
-        max = std::max(mas[0],mas[1]);
+        max = Max(mas[0],mas[1]);
         return;
     }
     mas[1] = val;
-    double m = std::max(mas[0],mas[1]);
+    double m = Max(mas[0],mas[1]);
     if(max < m){
         max = m;
     }
@@ -60,3 +70,4 @@ double MeanStatistics::eval()const
 {
     return sum/count;
 }
+
