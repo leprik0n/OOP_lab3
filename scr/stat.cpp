@@ -1,19 +1,23 @@
 #include "stat.h"
 
+#include <vector>
+
 void MinStatistics::process(double val)
 {
-    static double first = val;
-    if(val == first){
-        if(min < first){
-            goto mark;
-        }
-        else{
-            min = first;
-        }
+    static std::vector<double> mas;
+    if(mas.size() == 0){
+        mas.push_back(val);
+        return;
     }
-    mark:
-    if(min > val){
-        min = val;
+    if(mas.size() == 1){
+        mas.push_back(val);
+        min = std::min<double>(mas[0],mas[1]);
+        return;
+    }
+    mas[1] = val;
+    double m = std::min<double>(mas[0],mas[1]);
+    if(min > m){
+        min = m;
     }
 }
 
@@ -24,18 +28,20 @@ double MinStatistics::eval()const
 
 void MaxStatistics::process(double val)
 {
-    static double first = val;
-    if(val == first){
-        if(max > first){
-            goto mark;
-        }
-        else{
-            max = first;
-        }
+       static std::vector<double> mas;
+    if(mas.size() == 0){
+        mas.push_back(val);
+        return;
     }
-    mark:
-    if(max < val){
-        max = val;
+    if(mas.size() == 1){
+        mas.push_back(val);
+        max = std::max<double>(mas[0],mas[1]);
+        return;
+    }
+    mas[1] = val;
+    double m = std::max<double>(mas[0],mas[1]);
+    if(max < m){
+        max = m;
     }
 }
 
