@@ -30,7 +30,7 @@ for(int i = 0; i < sk; i++){
    test.push_back(vec[i]);
 }
 sort(test.begin(),test.end());
-/*assert(buf[0]->eval() == test[0]);
+assert(buf[0]->eval() == test[0]);
 cout<<"TEST_1_OK"<<endl;
 assert(buf[1]->eval() == test[test.size()-1]);
 cout<<"TEST_2_OK"<<endl;
@@ -41,8 +41,8 @@ for(int i = 0; i < s; ++i){
 }
 assert(buf[2]->eval() == sum/s);
 cout<<"TEST_3_OK"<<endl; 
-  */
+
    
-   cout<<"buf[0]->eval()==>"<<' '<<buf[0]->eval()<<endl;
+   //cout<<"buf[0]->eval()==>"<<' '<<buf[0]->eval()<<endl;
 return 0;
 }
