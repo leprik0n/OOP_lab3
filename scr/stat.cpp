@@ -11,11 +11,11 @@ void MinStatistics::process(double val)
     }
     if(mas.size() == 1){
         mas.push_back(val);
-        min = min(mas[0],mas[1]);
+        min = std::min(mas[0],mas[1]);
         return;
     }
     mas[1] = val;
-    double m = min(mas[0],mas[1]);
+    double m = std::min(mas[0],mas[1]);
     if(min > m){
         min = m;
     }
@@ -35,11 +35,11 @@ void MaxStatistics::process(double val)
     }
     if(mas.size() == 1){
         mas.push_back(val);
-        max = max(mas[0],mas[1]);
+        max = std::max(mas[0],mas[1]);
         return;
     }
     mas[1] = val;
-    double m = max(mas[0],mas[1]);
+    double m = std::max(mas[0],mas[1]);
     if(max < m){
         max = m;
     }
