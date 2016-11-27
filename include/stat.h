@@ -16,7 +16,7 @@ public:
     void process(double val);
     double eval() const;
 private:
-    double min = std::numeric_limits<long double>::max();
+    double min = std::numeric_limits<double>::max();
 };
 
 class MaxStatistics:public Statistic
@@ -25,7 +25,7 @@ public:
     void process(double val);
     double eval() const;
 private:
-    double max = std::numeric_limits<long double>::min();
+    double max = std::numeric_limits<double>::min();
 };
 
 class MeanStatistics:public Statistic
